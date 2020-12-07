@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Denk One";
+  src: url("DenkOne-Regular.ttf");
+  font-weight: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+
 html {
   box-sizing: border-box;
 }
@@ -9,6 +17,9 @@ html {
 }
 
 body {
+  display: grid;
+  grid-template-columns: auto 1370px auto;
+  grid-template-rows: 105px 970px 175px 2740px [click-start] 1070px [click-end] 1530px 420px 1700px [footer-start] 700px;
   margin: 0;
   font-size: 16px;
   line-height: 1.6;
@@ -19,4 +30,406 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+h2,
+.latest article:nth-child(2) p:nth-of-type(2),
+.latest article:nth-child(3) p:nth-of-type(2) {
+  font-family: "Denk One", sans-serif;
+  color: rgb(51, 51, 51);
+}
+
+p {
+  font-family: "Playfair Display", serif;
+  color: rgb(51, 51, 51);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+div,
+nav,
+section,
+main,
+article,
+aside,
+footer,
+ul,
+li,
+h1,
+h2,
+p {
+  border: 1px solid #000;
+}
+
+body > * {
+  grid-column: 2 / 3;
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+/* nav */
+.nav {
+  background-color: #606060;
+}
+
+.nav nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav .img {
+  width: 220px;
+  height: 70px;
+  margin-left: 30px;
+}
+
+.nav ul {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.nav ul li {
+  width: 105px;
+  height: 50px;
+}
+
+.nav .search {
+  width: 350px;
+  height: 60px;
+  margin-left: 20px;
+}
+
+/* main container */
+
+.main-container {
+  display: grid;
+  grid-template-columns: 800px auto 450px;
+}
+
+.latest {
+  grid-column: 1;
+  padding: 0 16px;
+}
+
+.latest .img--primary {
+  --size: 192px;
+  height: var(--size);
+  width: var(--size);
+  float: left;
+  background-color: #707070;
+}
+
+.latest .img {
+  --size: 128px;
+  height: var(--size);
+  width: var(--size);
+  float: left;
+}
+
+.latest article:nth-child(1) {
+  height: 410px;
+  margin: 83px 0 62px 0;
+  background-color: #d0d0d0;
+}
+
+.latest article:nth-child(1) p:nth-of-type(1) {
+  height: 40px;
+}
+.latest article:nth-child(1) h2 {
+  height: 130px;
+  font-size: 46px;
+  line-height: 57px;
+}
+.latest article:nth-child(1) p:nth-of-type(2) {
+  height: 20px;
+}
+.latest article:nth-child(1) p:nth-of-type(3) {
+  height: 100px;
+  margin: 30px 0;
+  font-size: 20px;
+  line-height: 34px;
+}
+.latest article:nth-child(1) a {
+  display: block;
+  width: 190px;
+  height: 40px;
+}
+
+.latest article:nth-child(2) {
+  margin: 0 0 62px 0;
+}
+
+.latest article:nth-child(2),
+.latest article:nth-child(3) {
+  height: 145px;
+  background-color: #909090;
+}
+
+.latest article:nth-child(2) p:nth-of-type(1),
+.latest article:nth-child(3) p:nth-of-type(1) {
+  height: 40px;
+}
+.latest article:nth-child(2) p:nth-of-type(2),
+.latest article:nth-child(3) p:nth-of-type(2) {
+  height: 100px;
+  font-size: 35px;
+  line-height: 42px;
+}
+
+.workshops {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 16px 0;
+  background-color: #909090;
+}
+
+.workshops .img {
+  --size: 250px;
+  height: var(--size);
+  width: var(--size);
+}
+
+.workshops h2 {
+  width: 250px;
+  height: 50px;
+}
+.workshops p:nth-of-type(1) {
+  width: 360px;
+  height: 110px;
+  margin-top: 40px;
+}
+.workshops p:nth-of-type(2) {
+  width: 360px;
+  height: 100px;
+  margin-top: 30px;
+}
+.workshops button {
+  width: 330px;
+  height: 70px;
+  margin-top: 30px;
+}
+
+/* load more */
+.load-more p {
+  width: 220px;
+  height: 50px;
+  margin: 20px auto 0;
+  background-color: #f0f0f0;
+}
+
+/* posts */
+.posts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.posts .community {
+  grid-column: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #909090;
+}
+
+.posts .community .img {
+  width: 250px;
+  height: 250px;
+}
+
+.posts .community h2 {
+  width: 450px;
+  height: 40px;
+  margin-top: 40px;
+  font-size: 28px;
+  line-height: 33px;
+}
+
+.posts .community p {
+  width: 580px;
+  height: 100px;
+  margin-top: 30px;
+}
+
+.posts .community button {
+  width: 300px;
+  height: 70px;
+  margin-top: 30px;
+}
+
+.posts article {
+  padding: 10px 10px 0;
+  background-color: #d0d0d0;
+}
+
+.posts article h2 {
+  height: 160px;
+  font-size: 28px;
+  line-height: 33px;
+}
+
+.posts article p {
+  height: 300px;
+}
+
+.posts .ad {
+  height: 270px;
+  align-self: center;
+  background-color: #c8c8c8;
+}
+
+/* click */
+
+.click-bg {
+  grid-row: click-start;
+  background-color: #707070;
+}
+
+.click {
+  grid-row: click-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.click h2 {
+  width: 710px;
+  height: 160px;
+}
+
+.click p {
+  width: 870px;
+  height: 80px;
+  margin-top: 25px;
+}
+
+.click button {
+  width: 380px;
+  height: 70px;
+  margin-top: 50px;
+}
+
+.click .img {
+  width: 920px;
+  height: 520px;
+  margin-top: 50px;
+}
+
+/* guides */
+.guides {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 480px auto;
+  grid-gap: 60px 30px;
+  padding: 30px;
+}
+
+.guides article {
+  padding: 30px;
+  background-color: #e0e0e0;
+}
+
+.guides article h2 {
+  width: 270px;
+  height: 120px;
+}
+.guides article p {
+  height: 140px;
+  margin-top: 30px;
+}
+.guides article button {
+  width: 440px;
+  height: 65px;
+  margin-top: 30px;
+}
+
+.guides h2,
+.guides button {
+  background-color: #707070;
+}
+
+.newsletter {
+  background-color: #707070;
+}
+
+/* featured book */
+.featured-book {
+  background-color: #707070;
+}
+
+/* community links */
+.community-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 280px;
+  grid-auto-rows: 400px;
+  padding-top: 40px;
+}
+
+.community-links article {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  background-color: #f0f0f0;
+}
+
+.community-links article:first-child {
+  grid-column: 1 / -1;
+  grid-template-columns: 256px 1fr;
+}
+
+.community-links article:first-child .img {
+  width: 250px;
+  height: 250px;
+  background-color: #989898;
+}
+
+.community-links article .img {
+  width: 80px;
+  height: 80px;
+  background-color: #a8a8a8;
+}
+
+.community-links article h2 {
+  height: 80px;
+}
+
+.community-links article p {
+  grid-column: 2;
+  height: 130px;
+}
+
+/* footer */
+
+.footer-bg {
+  grid-row: footer-start;
+  background-color: #707070;
+}
+
+.footer {
+  grid-row: footer-start;
+  height: 590px;
+  padding-top: 50px;
+}
+
+.footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer ul li {
+  margin-left: 20px;
+  padding: 10px 0;
 }
